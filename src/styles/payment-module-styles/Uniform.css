@@ -1,0 +1,167 @@
+/* Define CSS variables for maintainability */
+:root {
+  --primary-color: #3b82f6;
+  --border-color: #ccc;
+  --text-secondary: #555;
+  --background-gradient: linear-gradient(133deg, white 0%, #f0f0f0, #e0e0ff 76%, #ffc0cb 123%);
+  --form-line-color: #4876ee;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f8fafc;
+  margin: 0;
+  padding: 0;
+}
+
+.uniform-container {
+  padding:4vh 4vw 4vh 4vw;
+ overflow-x: hidden;
+    overflow-y: auto;
+    box-sizing: border-box;
+    width:97%;
+    height: calc(100vh - 41vh);
+    scrollbar-width: none;
+}
+
+.uniform-header {
+  text-align: left;
+  width: 100%;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.uniform-header-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.uniform-header h4 {
+  margin: 0;
+  font-size: 24px; /* 1.5rem ≈ 24px */
+  font-weight: bold;
+}
+
+.uniform-header p {
+  font-size: 14px; /* 0.9rem ≈ 14px */
+  color: var(--text-secondary);
+  width: 76%;
+}
+
+.uniform-header-buttons {
+  flex-direction: row;
+  display: flex;
+  gap: 16px;
+  width: auto;
+  margin-top: 16px; /* 2% ≈ 16px on typical screens */
+}
+
+.cancellation_form_line {
+  height: 8px;
+  width: 100%;
+  border-top-left-radius: 100% 39px;
+  border-top-right-radius: 100% 68px;
+  background-color: var(--form-line-color);
+}
+
+.uniform-form {
+  background: var(--background-gradient);
+  padding: 20px;
+  border-radius: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.form-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 12px;
+  flex-wrap: nowrap;
+  width: 100%;
+}
+
+.form-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  max-width: calc(50% - 10px);
+}
+
+.form-group.full-width {
+  max-width: 100%;
+}
+
+.form-group label {
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid var(--border-color);
+  font-size: 15px; /* 0.95rem ≈ 15px */
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+.form-group textarea {
+  resize: none;
+  height: 80px; /* Adjusted to match rows="3" */
+}
+
+.form-group select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"><path fill="%23555" d="M7 10l5 5 5-5z"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  padding-right: 30px;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #aaa;
+  text-transform: none;
+}
+
+.error {
+  color: red;
+  font-size: 12px; /* 0.8rem ≈ 12px */
+  margin-top: 4px;
+  word-wrap: break-word;
+  max-width: 100%;
+}
+
+@media (max-width: 768px) {
+  .uniform-container {
+    margin: 0 16px;
+    min-height: 640px; /* ≈ 80vh */
+    height: auto;
+  }
+
+  .form-row {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .form-group {
+    max-width: 100%;
+  }
+}

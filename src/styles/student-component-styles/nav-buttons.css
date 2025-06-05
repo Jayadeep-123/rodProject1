@@ -1,0 +1,61 @@
+.nav-and-year-container {
+    /* margin-top:8vh; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    gap: 0.5vw;
+    flex: 0 0 auto; /* Fixed height section */
+    padding:1rem 1rem 0 1rem;
+}
+
+.navbar {
+    background-color: #F7F7F7;
+    box-shadow: 0 0.2vh 0.4vh rgba(0, 0, 0, 0.1);
+    padding: 0.5vw;
+    display: flex;
+    align-items: center;
+    border-radius: 1.5vw;
+    flex: 1;
+    max-width:50vw;
+}
+
+.nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5vw;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #666;
+    border-radius: 0.8vw;
+    padding: 0.4vw 0.2vw;
+    transition: background-color 0.2s, color 0.2s;
+    font-size: 1vw;
+    white-space: nowrap;
+    text-align: center;
+    flex: 1 1 auto;
+}
+
+.nav-link:hover {
+    background-color: #e0e0e0;
+}
+
+.nav-link.active {
+    color: #3425FF;
+    font-weight: bolder;
+    background-color: #FFF;
+}
+
+.year-select {
+    padding: 0.5vw;
+    border-radius: 1vw;
+    background-color: #3425FF;
+    color: white;
+    font-size: 0.9vw;
+    flex: 0 0 auto;
+}

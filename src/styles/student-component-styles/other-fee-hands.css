@@ -1,0 +1,40 @@
+
+/* .metrics-grid{
+    display:none;
+} */
+
+.fee-head-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 1vw;
+  flex-wrap: wrap;
+  
+  max-width: 600px;
+  
+  height:45vh;
+  padding-top:4vh;
+  padding-left:3vw;
+}
+
+.fee-head-column {
+  flex: 1;
+  min-width: 250px;
+}
+
+.fee-head-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 0;
+  font-size: 17px;
+  color: #626262;
+  height:6vh;
+  align-items: center;
+  
+}
+.fee-head-row span{
+    font-size:1em;
+    color:#626262;
+    font-weight: none;
+}
+
+

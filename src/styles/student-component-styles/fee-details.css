@@ -1,0 +1,111 @@
+.fee-summary-container {
+  display: flex;
+  justify-content: flex-start;
+
+  /* align-items: center; */
+  gap: 2rem;
+  background: #ffffff;
+  /* padding-top:1.3em;  */
+  border-radius: 12px;
+  height:31.5vh;
+  flex-wrap: wrap;
+}
+
+.fee-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 1;
+  min-width: 200px;
+  padding-top:2.5vh;
+  padding-left:2vw;
+}
+
+.fee-row {
+  display: flex;
+  justify-content: space-between;
+  /* font-size: 0.9em; */
+  color: #626262;
+  padding-top:5px;
+  /* width:2em; */
+  width:80%;
+  height:4vh;
+  /* gap: */
+}
+
+.fee-circle-status {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-right: 4vw;
+}
+
+.circle {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: conic-gradient(#8b0000 25%, #fbe4e4 0);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.circle-inner {
+  background: white;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  text-align: center;
+  padding: 8px 4px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+.term-label {
+  font-size: 12px;
+  color: #333;
+  display: block;
+}
+
+.amount {
+  font-weight: bold;
+  font-size: 16px;
+  display: block;
+  margin: 4px 0;
+}
+
+.status {
+  font-size: 12px;
+  display: block;
+}
+
+.unpaid {
+  color: red;
+}
+
+.payment-button-container {
+  text-align: center;
+  /* padding-top: 3rem; */
+}
+
+.pay-button {
+  background-color: #3425FF;
+  color: #FFFFFF;
+  padding: 8px 20px;
+  font-size: 15px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  /* transition: background 0.3s ease; */
+}
+
+.pay-button:hover {
+  background-color: #3425FF;
+}
+
+.fee-row span{
+    font-size: 16px;
+}
+.payment-chart{
+  margin-right:3vw;
+}

@@ -1,0 +1,258 @@
+.paymentContainer {
+  font-family: "Inter", sans-serif;
+  overflow-y: auto;
+  padding-right: 10px;
+  background: linear-gradient(135deg, rgba(255, 235, 205, 0.5), rgba(173, 216, 230, 0.5), rgba(255, 192, 203, 0.5));
+  border-radius: 8px;
+  scrollbar-width: none;
+  margin-top:2vh;
+  margin-left:1vw;
+  width:97%;
+  height: calc(100vh - 50vh);
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  
+}
+
+.MainForms {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  scrollbar-width: none;
+  height:50vh;
+  margin-left: 40px;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.form_section1 {
+  width: 48%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  column-gap: 20px;
+  border: 1px solid #dde2e4;
+  border-radius: 10px;
+  padding: 12px 20px;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.form_section2 {
+  width: 48%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  column-gap: 20px;
+  border: 1px solid #dde2e4;
+  border-radius: 10px;
+  padding: 25px 28px;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 10px;
+  height:65vh
+}
+
+.form_container_header {
+  display: flex;
+  justify-content: center;
+  margin-left: 0px;
+}
+
+.placeholder-content {
+  padding: 20px;
+  text-align: center;
+  color: #888;
+  font-size: 16px;
+}
+
+.form_section2 .heading {
+  width: 100%;
+  position: relative;
+}
+
+.form_section2 .heading h3 {
+  font-size: 18px;
+  font-weight: 600;
+  position: relative;
+  border-bottom: 1px solid #888;
+}
+
+.form_section1 .input-group,
+.form_section2 .input-group {
+  width: calc(50% - 20px);
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 5px;
+}
+
+.form_section1 .input-group.full-width,
+.form_section2 .input-group.full-width {
+  width: 100%;
+}
+
+.input-group label {
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+.input-group input,
+.input-group select {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  text-decoration: none;
+  background-color: #fff;
+}
+
+small {
+  color: orange;
+  font-size: 12px;
+}
+
+.submit-btn {
+  width: 100%;
+  text-align: center;
+  height:5vh;
+  /* height:5vh; */
+}
+
+button[type="submit"] {
+  background-color: #3478f6;
+  color: white;
+  padding: 10px 30px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #155ee2;
+}
+
+.error {
+  color: red;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+.paymentTypes {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  padding: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 11px;
+  padding: 0px;
+  margin-top: 10px;
+}
+
+.paymentModeBtn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 9px;
+  color: #333;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.paymentModeBtn .payment-icon {
+  filter: grayscale(1) brightness(0); /* Makes the icon black when not active */
+}
+
+.paymentModeBtn.active {
+  background-color: #3478f6;
+  color: #fff;
+  border-color: #3478f6;
+}
+
+.paymentModeBtn.active .payment-icon {
+  filter: brightness(0) invert(1); /* Makes the icon white when active */
+}
+
+.paymentModeBtn:hover {
+  background-color: #e6f0fa;
+}
+
+.paymentModeBtn.active:hover {
+  background-color: #155ee2;
+}
+
+.paymentModeBtn .icon {
+  display: flex;
+  align-items: center;
+}
+
+.payment-icon {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+}
+
+@media (max-width: 768px) {
+  .paymentContainer {
+    margin: 0 20px;
+    max-height: 80vh;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  .MainForms {
+    flex-direction: column;
+    max-height: none;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  .form_section1,
+  .form_section2 {
+    width: 100%;
+    max-height: none;
+    overflow-y: visible;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  .form_section1 .input-group,
+  .form_section2 .input-group {
+    width: 100%;
+  }
+
+  .paymentTypes {
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .paymentModeBtn {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+
+  .payment-icon {
+    width: 14px;
+    height: 14px;
+  }
+}

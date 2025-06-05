@@ -1,0 +1,98 @@
+
+/* Table section */
+.table-section {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  height: 65%;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #e2e8f0;
+}
+ 
+/* Table header with title and export button */
+.table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5% 2%;
+  background-color: #fff;
+  border-bottom: 1px solid #e2e8f0;
+}
+ 
+.table-header h2 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #2d3748;
+  margin: 0;
+}
+ 
+.export-button {
+  background-color: transparent;
+  color: #4876EE;
+  border: 1px solid #4876EE;
+  padding: 0.6% 1.2%;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+ 
+.export-button:hover {
+  background-color: #4876EE;
+  color: white;
+}
+ 
+.export-button:hover svg path {
+  stroke: white;
+}
+ 
+/* Table container styling */
+.table-section .MuiTableContainer-root {
+  flex: 1;
+  max-height: calc(100% - 60px);
+  overflow-y: auto;
+}
+ 
+/* Table styling overrides */
+.table-section .MuiTable-root {
+  width: 100%;
+}
+ 
+.table-section .MuiTableHead-root .MuiTableCell-root {
+  background-color: #f7fafc !important;
+  font-weight: 600 !important;
+  font-size: 0.75rem;
+  color: #4a5568;
+  padding: 1% 1%;
+  border-bottom: 1px solid #e2e8f0;
+  white-space: nowrap;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+ 
+.table-section .MuiTableBody-root .MuiTableCell-root {
+  font-size: 0.8rem;
+  padding: 1% 1%;
+  color: #2d3748;
+  border-bottom: 1px solid #f1f5f9;
+  font-weight: 400;
+}
+ 
+.table-section .MuiTableRow-root:hover {
+  background-color: #f8faff !important;
+}
+ 
+/* Specific styling for alternating rows */
+.table-section .MuiTableBody-root .MuiTableRow-root:nth-child(even) {
+  background-color: #fcfcfd;
+}
+ 
+.create-payment-button:hover {
+  background-color: #3b5dc9;
+}

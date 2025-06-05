@@ -1,0 +1,271 @@
+p {
+    font-size: 0.782rem;
+    margin: 0;
+}
+
+h3 {
+    font-size: 1rem;
+    margin: 0;
+}
+
+.student_right {
+    background-image: url("../../assets/right-profile-bg.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    overflow-y: hidden;
+}
+
+.student_right_content_1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    padding: 5px;
+}
+
+.student_image {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background-color: #FFFFFF;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.student_image figure {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* .student_image img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center top;
+} */
+
+.student_gender_caste {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.student_gender {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.student_full_profile_button button {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    background-color: #3425FF;
+    color: #FFFFFF;
+    border-radius: 5px;
+}
+
+.student_right_content_2 {
+    display: flex;
+    flex-direction: column;
+}
+
+.student_icons_standard {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.student_icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.student_standard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.student_year {
+    width: 61px;
+    height: 23px;
+    background-color: #0F6CBD;
+    color: #FFFFFF;
+    border-radius: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* padding: auto; */
+}
+
+.student_section {
+    width: 52px;
+    height: 23px;
+    background-color: #4B901F;
+    color: #FFFFFF;
+    border-radius: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.student_group_admission_type,
+.student_section_admission_status {
+    display: flex;
+    justify-content: space-between;
+    /* height:2vh; */
+}
+
+.student_admission_type,
+.student_admission_status,
+.student_language_2 {
+    text-align: right;
+}
+
+
+.student_right_content_3 {
+    gap: 5px;
+    display: grid;
+}
+
+.student_content_3_top {
+    gap: 5px;
+    display: grid;
+}
+
+.profile_details_header,
+.campus_details_header,
+.additional_details_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    border-radius: 4px;
+    background: linear-gradient(to right, #FFF2F2, #FFFFFF00);
+    cursor: pointer;
+    border: 1px solid #D3D3D3;
+}
+
+.profile_details_content,
+.campus_details_content,
+.additional_details_content {
+    max-height: 0;
+    background: linear-gradient(to right, #FFF2F2, #FFFFFF00);
+    border: 1px solid #D3D3D3;
+    transition: max-height 0.5s ease-in-out, transform 0.5s ease-in-out;
+    overflow: hidden;
+}
+
+.profile_details_content.open {
+    max-height: 120px;
+    transform: translateY(0);
+}
+
+.campus_details_content.open,
+.additional_details_content.open {
+    max-height: 70px;
+    transform: translateY(0);
+}
+
+
+
+.student_aadhar_mother,
+.student_dob_father,
+.student_langauges_1_2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.student_aadhar_number,
+.student_mother_name,
+.student_dob,
+.student_father_name,
+.student_address {
+    display: flex;
+    flex-direction: column;
+    padding: 0 5px;
+}
+
+.student_mother_name,
+.student_father_name {
+    text-align: right;
+}
+
+.student_content_3_bottom {
+    width: 100%;
+}
+
+.student_update_profile_button {
+    width: 100%;
+    background-color: #191275;
+    border: 1px solid #2D22C2;
+    border-radius: 6px;
+}
+
+.student_update_profile_button button {
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    color: #FFFFFF;
+    background-color: #191275;
+}
+
+/* .fixed_container_button{
+    position: relative;
+} */
+
+.ticket_container {
+    position: fixed;
+    z-index: 100;
+    bottom: 50px;
+    right: 30px;
+    background-color: #3425FF;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    padding: 15px;
+}
+
+.ticket_count {
+    width: 26px;
+    height: 26px;
+    position: fixed;
+    border-radius: 50%;
+    background-color: #FC2323;
+    color: #FFF;
+    bottom: 80px;
+    right: 22px;
+    z-index: 200;
+
+}
+
+.ticket_count p {
+    text-align: center;
+    padding-top: 5px;
+}
+
+
+.profile_details_header p,
+.campus_details_header p,
+.additional_details_header p {
+    font-weight: 600;
+}

@@ -4,19 +4,48 @@ import useStudentData from '../../customHooks/useStudentData';
 
 function TransportDetails() {
   const { studentId } = useStudentContext();
-  const { studentData, isLoading, isError } = useStudentData(studentId, 'transport-details');
+  const { studentData, isLoading, isError } = useStudentData(studentId);
+
+  // Access transport specifically
+  const transport = studentData.transport || {};
 
   if (!studentId) {
     return <div>Please enter a student ID</div>;
   }
 
-  if (isLoading) {
+  if (isLoading || transport.isLoading) {
     return <div>Loading transport details...</div>;
   }
 
-  if (isError || studentData.data === null) {
-    return <div>Student not found or error loading transport details: {studentData.error?.message || 'Unknown error'}</div>;
+  if (isError || transport.isError || transport.data === null) {
+    return (
+      <div>
+        Student not found or error loading transport details:{" "}
+        {transport.error?.message || "Unknown error"}
+      </div>
+    );
   }
+
+  if (transport.isEmpty || !transport.data?.length) {
+    return <div>No transport details available for this student.</div>;
+  }
+
+  // Access the first object in the array
+  const transportData = transport.data[0] || {};
+
+  // Map API field names to component field names
+  const mappedData = {
+    academicYear: transportData.acadamicYear ?? 'N/A',
+    transportType: transportData.transportType ?? 'N/A', // Note: Not in Swagger response, may need backend update
+    transportStatus: transportData.transportStatus ?? 'N/A',
+    stage: transportData.stage ?? 'N/A',
+    routeNumber: transportData.transportRouteNo ?? 'N/A',
+    routeStart: transportData.startFrom ?? 'N/A',
+    routeEnd: transportData.toDestination ?? 'N/A',
+  };
+
+  // Debug log to verify data
+  console.log('Transport Data:', { studentId, transportData, mappedData });
 
   return (
     <div>
@@ -24,35 +53,35 @@ function TransportDetails() {
         <div className="transport-info">
           <div className="transport-row">
             <p>Academic Year</p>
-            <span>{studentData.data?.academicYear ?? 'N/A'}</span>
+            <span>{mappedData.academicYear}</span>
           </div>
           <div className="transport-row">
             <p>Transport Type</p>
-            <span>{studentData.data?.transportType ?? 'N/A'}</span>
+            <span>{mappedData.transportType}</span>
           </div>
           <div className="transport-row">
             <p>Transport Status</p>
-            <span>{studentData.data?.transportStatus ?? 'N/A'}</span>
+            <span>{mappedData.transportStatus}</span>
           </div>
           <div className="transport-row">
             <p>Stage</p>
-            <span>{studentData.data?.stage ?? 'N/A'}</span>
+            <span>{mappedData.stage}</span>
           </div>
         </div>
 
         <div className="transport-visual">
-          {/* <div className="route-circle">
+          <div className="route-circle">
             <span className="route-icon">🚍</span>
             <p className="route-number">
               Route No<br />
-              <strong>{studentData.data?.routeNumber ?? 'N/A'}</strong>
+              <strong>{mappedData.routeNumber}</strong>
             </p>
           </div>
           <div className="route-path">
-            <p className="stop">{studentData.data?.routeStart ?? 'N/A'}</p>
+            <p className="stop">{mappedData.routeStart}</p>
             <div className="line"></div>
-            <p className="stop">{studentData.data?.routeEnd ?? 'N/A'}</p>
-          </div> */}
+            <p className="stop">{mappedData.routeEnd}</p>
+          </div>
         </div>
       </div>
 

@@ -1,4 +1,3 @@
-// MetricsGrid.js
 import "../../styles/student-component-styles/metrics-grid.css";
 import { useLocation } from 'react-router-dom';
 import useStudentData from '../../customHooks/useStudentData';
@@ -8,7 +7,7 @@ function MetricsGrid() {
   const location = useLocation();
   const hideMetrics = /other-fee-heads/.test(location.pathname);
   const { studentId } = useStudentContext();
-  const { studentData, isLoading, isError } = useStudentData(studentId, 'cards');
+  const { studentData, isLoading, isError } = useStudentData(studentId);
 
   if (!studentId) {
     return <div>Please enter a student ID</div>;
@@ -18,9 +17,11 @@ function MetricsGrid() {
     return <div>Loading metrics...</div>;
   }
 
-  if (isError || studentData.data === null) {
-    return <div>Student not found or error loading metrics: {studentData.error?.message || 'Unknown error'}</div>;
+  if (isError || !studentData.cards?.data) {
+    return <div>Student not found or error loading metrics: {studentData.cards?.error?.message || 'Unknown error'}</div>;
   }
+
+  const cardsData = studentData.cards.data;
 
   return (
     <div>
@@ -35,7 +36,7 @@ function MetricsGrid() {
                 <path d="M14.7205 17.7558C18.338 17.7558 21.3106 19.4888 21.532 23.1962C21.5408 23.3443 21.5313 23.8005 20.9647 23.8007H8.48322C8.29374 23.8007 7.91846 23.3916 7.93439 23.1952C8.22724 19.5893 11.1534 17.7559 14.7205 17.7558ZM21.2322 19.2675C23.8058 19.2957 25.907 20.5968 26.0653 23.3466C26.0716 23.4574 26.0653 23.8004 25.6561 23.8007H22.742V23.7997C22.7419 22.0993 22.1803 20.53 21.2322 19.2675Z" fill="#8280FF"/>
               </svg>
             </div>
-            <p className="metric-value">{studentData.data?.ipeMarks ?? 'N/A'}</p>
+            <p className="metric-value">{cardsData.ipeMarks ?? 'N/A'}</p>
             <p className="metric-change positive">+8.6% Up from Section</p>
           </div>
 
@@ -48,7 +49,7 @@ function MetricsGrid() {
                 <path opacity="0.499209" fillRule="evenodd" clipRule="evenodd" d="M8.72974 11.731C8.81903 11.6182 8.93173 11.5229 9.06313 11.4529L16.5006 7.49154C16.8129 7.32525 17.1874 7.32525 17.4996 7.49154L24.9371 11.4529C25.0384 11.5069 25.1286 11.5759 25.2055 11.6563L17.051 16.3643C16.9974 16.3952 16.948 16.4306 16.9029 16.4698C16.8579 16.4306 16.8085 16.3952 16.7548 16.3643L8.72974 11.731Z" fill="#FEC53D"/>
               </svg>
             </div>
-            <p className="metric-value">{studentData.data?.recentMarks ?? 'N/A'}</p>
+            <p className="metric-value">{cardsData.recentMarks ?? 'N/A'}</p>
             <p className="metric-change positive">+8.6% Up from Section</p>
           </div>
 
@@ -61,7 +62,7 @@ function MetricsGrid() {
                 <path opacity="0.5" d="M14.117 19.366C13.784 19.7212 13.2262 19.7392 12.871 19.4062C12.5159 19.0733 12.4979 18.5154 12.8308 18.1603L16.1364 14.6343C16.4584 14.2909 16.9935 14.2611 17.3516 14.5667L19.9606 16.793L23.3598 12.4873C23.6615 12.1052 24.2158 12.04 24.5979 12.3417C24.98 12.6433 25.0452 13.1976 24.7435 13.5797L20.7769 18.6042C20.467 18.9966 19.8932 19.0531 19.5128 18.7285L16.8472 16.4538L14.117 19.366Z" fill="#4AD991"/>
               </svg>
             </div>
-            <p className="metric-value">{studentData.data?.emcetMockTest ?? 'N/A'}</p>
+            <p className="metric-value">{cardsData.emcetMockTest ?? 'N/A'}</p>
             <p className="metric-change negative">-4.3% Down from Section</p>
           </div>
 
@@ -74,7 +75,7 @@ function MetricsGrid() {
                 <path opacity="0.499209" fillRule="evenodd" clipRule="evenodd" d="M8.72974 11.731C8.81903 11.6182 8.93173 11.5229 9.06313 11.4529L16.5006 7.49154C16.8129 7.32525 17.1874 7.32525 17.4996 7.49154L24.9371 11.4529C25.0384 11.5069 25.1286 11.5759 25.2055 11.6563L17.051 16.3643C16.9974 16.3952 16.948 16.4306 16.9029 16.4698C16.8579 16.4306 16.8085 16.3952 16.7548 16.3643L8.72974 11.731Z" fill="#FEC53D"/>
               </svg>
             </div>
-            <p className="metric-value">{studentData.data?.attendance ?? 'N/A'}</p>
+            <p className="metric-value">{cardsData.attendence ?? 'N/A'}</p>
             <p className="metric-change negative">-4.3% Down from Section</p>
           </div>
         </div>
